@@ -1,0 +1,124 @@
+<html>
+<head>
+    <title>Diffusion</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="js/main.js" type="module"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css"></style>
+</head>
+<body>
+    
+    <h1>Diffusion</h1>
+
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <!-- Linke Spalte Anfang -->
+            <div class="col col-lg-3" class="tableSettings">
+            
+                <div id="initL">
+                    <form>
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                Atomzahl
+                            </span>
+                            <input id="atomCountL" type="number" class="form" name="msg" placeholder="Wie viele Atome?" value="50">
+                        </div>
+                    </form>
+            
+                    <label for="atomRadiusL">Atomradius: </label>
+                    <input type="range" id="atomRadiusL" value="10" min="5" max="30"></input>
+                    <br>
+            
+            
+                    <label for="atomColorL">Atomfarbe:</label>
+                    <select id="atomColorL" class="form-control">
+                        <option value="black">Schwarz</option>
+                        <option value="gray">Grau</option>
+                        <option value="blue">Blau</option>
+                        <option value="red">Rot</option>
+                        <option value="green">Gr&uuml;n</option>
+                        <option value="yellow">Gelb</option>
+                        <option value="orange">Orange</option>
+                        <option value="pink">Rosa</option>
+                    </select>
+            
+            
+            
+                </div>
+            </div>
+            <!-- Linke Spalte Ende -->
+
+            <!-- Mittlere Spalte Anfang -->
+            <div class="col col-lg-6">
+                <canvas id="screen" width="450px" height="450px"></canvas><br><br>
+
+                <div id="initM">
+                    <button class="btn btn-info" onclick="newAtoms()" id="creator">Atome erstellen</button> <button class="btn col-lg-1 reloadbtn" onclick="deleteAtoms()">&#8634;</button>
+                    <br><br>
+                    <label for="membran">Membran:</label>
+                    <select id="membran" class="form-control">
+                        <option value="none">Keine</option>
+                        <option value="black">Schwarz</option>
+                        <option value="gray">Grau</option>
+                        <option value="blue">Blau</option>
+                        <option value="red">Rot</option>
+                        <option value="green">Gr&uuml;n</option>
+                        <option value="yellow">Gelb</option>
+                        <option value="orange">Orange</option>
+                        <option value="pink">Rosa</option>
+                    </select>
+                    
+                    <br><br>
+                    <button class="btn btn-success" onclick="start()" id="starter">Simulation starten</button>
+                    
+                </div>
+
+                
+                <div id="settings" hidden="true">
+                    <br>
+                    <label for="temp">Temperatur: </label>
+                    <input type="range" id="temp" value="200" min="0" max="1000" /><br><br>
+                    <button onclick="stop()" class="btn btn-danger">STOP</button><br><br>
+                    <button onclick="pauseToggle()" id="pauser" class="btn btn-primary">PAUSE</button>
+                    
+                </div>
+            </div>
+            <!-- Mittlere Spalte Ende -->
+
+            <!-- Rechte Spalte Anfang -->
+            <div class="col col-lg-3" class="tableSettings">
+                
+                <div id="initR">
+                    <form>
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                Atomzahl
+                            </span>
+                            <input id="atomCountR" type="number" class="form" name="msg" placeholder="Wie viele Atome?" value="50">
+                        </div>
+                    </form>
+                    
+                    <label for="atomRadiusR">Atomradius: </label>
+                    <input type="range" id="atomRadiusR" value="10" min="5" max="30"></input><br>
+                    
+                    
+                    <label for="atomColorR">Atomfarbe:</label>
+                    <select id="atomColorR" class="form-control">
+                        <option value="black">Schwarz</option>
+                        <option value="gray">Grau</option>
+                        <option value="blue">Blau</option>
+                        <option value="red">Rot</option>
+                        <option value="green">Gr&uuml;n</option>
+                        <option value="yellow">Gelb</option>
+                        <option value="orange">Orange</option>
+                        <option value="pink">Rosa</option>
+                    </select>
+
+                </div>
+            </div>
+            <!-- Rechte Spalte Ende -->
+        </div>
+    </div>
+    
+</body>
+</html>
