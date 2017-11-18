@@ -1,2 +1,2 @@
 # diffusion
-A simulation a diffusion.
+A simulation of an diffusion.
